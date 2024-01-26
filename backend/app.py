@@ -50,7 +50,8 @@ async def json_input(data: dict):
         sentence_tfidf = tfidf_vectorizer.transform([sentence])
         prediction = model.predict(sentence_tfidf)
         confidence_score = round(np.max(model.predict_proba(sentence_tfidf)), 2) * 100
-        outputs = outputs.append({'sentence': sentence, 'category': category_map[prediction[0]], 'confidence_score': confidence_score}, ignore_index=True)
+        new_row = {'sentence': sentence, 'category': category_map[prediction[0]], 'confidence_score': confidence_score}
+        outputs = pd.concat([outputs, pd.DataFrame([new_row])], ignore_index=True)
 
     outputs = outputs[outputs['category'] != 'Not Dark Pattern']
     outputs = outputs.groupby('category')['sentence'].apply(list).to_dict()
