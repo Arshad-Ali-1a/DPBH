@@ -1,3 +1,5 @@
+## System Architecture
+
 ![Architecture](images/architecture.png)
 
 ### Chrome Extension:
