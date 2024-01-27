@@ -2,7 +2,7 @@
 
 Here's the working of our **Chrome Extension** and **Mobile Application**
 
-![Architecture](../images/architecture.png)
+<img style="width:1000px"  src = "../images/architecture.png"/>
 
 ## Extension Architecture Overview:
 
