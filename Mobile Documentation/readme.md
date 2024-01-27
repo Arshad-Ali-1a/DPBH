@@ -138,6 +138,7 @@ It is required to set up the backend of the application. Configure the URI on li
   Please choose one (or "q" to quit): 1
   ```
 - The SDK will begin building the application on your mobile device
+
 https://github.com/PreranaYekkele/DPBH/assets/95875573/7699b57f-bc17-49d1-a1b9-8548f08b5a54
 
 
