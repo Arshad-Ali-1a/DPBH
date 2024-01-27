@@ -84,6 +84,11 @@ It is required to set up the backend of the application. Configure the URI on li
 - Using the local host of the user system
   - `var url = Uri.parse('http://localhost:8000/detect_darkness');`
   - For users running on local host, ensure that the host is configured at '0.0.0.0' to ensure global visibility.
+    ```
+    if __name__ == "__main__":
+
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+    ```
     - Running using Uvicorn ```uvicorn app:app --host 0.0.0.0 --port 8000 --reload  ```
     - Running using python ``` python .\app.py ```  
 - Using an API connected to a remote / cloud server
