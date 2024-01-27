@@ -52,9 +52,9 @@
 **9. User Insight Delivery:**
    - Users receive the modified image, providing visual insights into the presence of dark patterns within the uploaded screenshot.
 
-# Chrome Extension
+<hr>
 
-This README provides instructions on how to run and test the Chrome Extension locally.
+# Chrome Extension Setup
 
 ## Prerequisites
 
