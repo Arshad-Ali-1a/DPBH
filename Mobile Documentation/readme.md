@@ -148,5 +148,6 @@ __NOTE__: Any changes made to the application while the app is running will requ
 
 ## Using the Application:
 The application in the video (Horus Dark Patterns Buster) is our working prototype of the Flutter Application.
+
 https://github.com/PreranaYekkele/DPBH/assets/95875573/8b4dafbe-c395-4616-8474-632bd84add17
 
