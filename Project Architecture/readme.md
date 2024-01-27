@@ -1,27 +1,57 @@
 # System Architecture
 
+Here's the working of our **Chrome Extension** and **Mobile Application**
+
 ![Architecture](../images/architecture.png)
 
-## Interacting with Chrome Extension:
+### Extension Architecture Overview:
 
-**1. Extension Action:**
-   - The Chrome extension, equipped with web scraping capabilities, initiates the dynamic analysis of the webpage to detect potential dark patterns.
+1. **User Interaction:**
+   - The user interacts with the extension by clicking on the extension icon in the Chrome browser.
 
-**2. Automated Web Scraping:**
-   - Utilizing automated web scraping capabilities, the extension carefully extracts relevant data and page elements from the website.
+2. **Popup (popup.html, popup.js, style.css):**
+   - The popup is responsible for initiating the detection process.
+   - It sends a command to the background script to start the detection.
 
-**3. Data Processing:**
-   - Extracted data is processed within the extension, ensuring necessary properties are retained while eliminating unnecessary information to streamline transmission.
+3. **Background Script (background.js):**
+   - Listens for commands from the popup.
+   - Initiates the detection process by sending a message to the content script.
 
-**4. Data Transmission:**
-   - Processed data is transmitted from the Chrome extension to the cloud-hosted Python server.
+4. **Content Script (content.js):**
+   - Injected into the currently active webpage.
+   - Scrapes data from the webpage using Depth First Search Approach to extract information about the HTML elements (tags, text, id, class, location, height, width).
+   - Compiles the extracted data into a JSON format.
+   - Sends the JSON data to the server for dark pattern detection.
 
-**5. Machine Learning Analysis:**
-   - On the server side, advanced machine learning models analyze the data to identify dark patterns based on insights gained from model training.
+5. **Server (Cloud Hosted):**
+   - Hosted in the cloud to handle dark pattern detection using machine learning models.
+   - Receives JSON data from the content script.
+   - Processes the data using the dark pattern detection model.
+   - Sends back a response containing information about detected dark patterns, including their type, count, and specific texts identified as dark patterns.
 
-**6. Highlighting Dark Patterns:**
-   - Identified dark patterns are relayed to the Chrome extension, dynamically highlighting them on the website in real-time.
-   - Users receive immediate feedback within their browser, providing insights into potential dark patterns as they navigate the website.
+6. **Content Script (Continued):**
+   - Receives the response from the server.
+   - Parses the response and extracts information about dark patterns.
+   - Highlights the identified dark pattern elements on the webpage.
+   - Sends a message to the popup to display the results.
+
+7. **Popup (Continued):**
+   - Receives the message from the content script with the detected dark pattern details.
+   - Renders the results in a user-friendly format, showing the type and count of dark patterns.
+   - Displays any relevant texts identified as dark patterns.
+
+### Data Flow:
+
+1. User initiates detection in the popup.
+2. Popup sends a command to the background script.
+3. Background script sends a message to the content script.
+4. Content script scrapes and compiles data, then sends it to the server.
+5. Server processes the data, runs dark pattern detection, and sends results back.
+6. Content script receives the results and highlights dark patterns on the webpage.
+7. Content script sends a message to the popup with the detected dark pattern details.
+8. Popup displays the results to the user.
+
+This architecture allows for a clear separation of concerns between different components of your extension, making it modular and easy to maintain. It ensures effective communication between the extension and the server for dark pattern detection.
 
 ## Interacting with Mobile Application:
 
