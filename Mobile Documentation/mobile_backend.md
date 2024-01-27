@@ -12,11 +12,15 @@ The primary purpose of the NOVAS mobile API is to empower mobile applications to
 
 The API utilizes advanced image processing techniques and Optical Character Recognition (OCR) technology to extract text and analyze the layout of the user interface. It then communicates with an external dark pattern detection service, which evaluates the extracted information to identify potential dark patterns. The API finally returns highlighted images, showcasing the detected dark patterns, along with relevant information.
 
+The API employs a text highlighting mechanism to draw attention to identified dark patterns. When potential dark patterns are detected within the user interface, the API dynamically highlights the relevant text on the image. This highlighting is achieved by adding a visually distinct color around the text, making it easily noticeable to both developers and end-users.
+
 ## Key Features
 
 - **Dark Pattern Detection:** The API identifies and highlights potential dark patterns in user interface images, such as misleading prompts, hidden costs, or coercive tactics.
   
 - **Highlighting:** The API returns an image with all the detected dark patterns Highlighted.
+
+- **Privacy:** All the images are sent in encoded format, and when the processing is done, the images are deleted. No data is permanently stored to respect the user's privacy.
 
 
 ## Integration
