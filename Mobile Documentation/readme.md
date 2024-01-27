@@ -15,7 +15,7 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 ## Setting Up Nova on your local Android System:
--Extract the source code from the `NOVA Dark Pattern Buster Mobile Application Source Code` file and save the extracted directory. The following video shows how to extract and navigate to the required directory using Windows 11 and VS Code.
+Extract the source code from the `NOVA Dark Pattern Buster Mobile Application Source Code` file and save the extracted directory. The following video shows how to extract and navigate to the required directory using Windows 11 and VS Code.
 
 https://github.com/PreranaYekkele/DPBH/assets/95875573/04b950f1-39d9-4db7-8a4e-e7124f71f911
 
@@ -34,8 +34,8 @@ The file structure of the application follows native Flutter scaffolding, as ins
 ```
 
 The files of interest are as follows:
--`main.dart` is the main Flutter Application and the entry point of the app. All the required code is found in this file.
--`pubsec.yaml` is the file that handles dependencies. Any new dependencies required for the application are to be added to the dependencies portion of the file. Upon extraction these dependencies should be visible in the `pubsec.yaml` file:
+- `main.dart` is the main Flutter Application and the entry point of the app. All the required code is found in this file.
+- `pubsec.yaml` is the file that handles dependencies. Any new dependencies required for the application are to be added to the dependencies portion of the file. Upon extraction these dependencies should be visible in the `pubsec.yaml` file:
 
 ```
 dependencies:
