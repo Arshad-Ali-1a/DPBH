@@ -18,34 +18,17 @@ This architecture maintains a clear flow of communication between the user inter
 
 <hr>
 
-## Interacting with Mobile Application:
+## Mobile Application Architecture Overview:
 
-**1. Screenshot Analysis:**
-   - Users initiate the process by uploading a screenshot, triggering a robust Optical Character Recognition (OCR) process within the mobile app.
+Users kickstart the screenshot analysis process in the mobile app by uploading an image, triggering an Optical Character Recognition (OCR) algorithm. This advanced OCR mechanism extracts text content from the screenshot, transforming it into a structured format.
 
-**2. OCR and Text Extraction:**
-   - The OCR algorithm performs advanced text extraction, converting screenshot content into a structured format.
+The extracted text data undergoes Base64 encoding, enhancing security and efficiency during transmission to the centralized Python server. The securely transmitted data includes both the Base64-encoded text and the original screenshot image, ensuring data integrity throughout the process.
 
-**3. Data Encoding with Base64:**
-   - Extracted text data is encoded using Base64 for secure and efficient transmission to the centralized Python server.
+On the server side, machine learning algorithms analyze the Base64-encoded text data and concurrently examine the screenshot image for the presence of dark patterns. If identified, the Python server dynamically modifies the image to highlight detected dark patterns while preserving the original context.
 
-**4. Data Transmission:**
-   - Base64-encoded text data and the original image are securely transmitted to the Python server, ensuring data integrity.
+The enhanced image, along with any additional data, is then transmitted back to the mobile application, creating a feedback loop. Upon receiving the server response, the mobile app decodes any Base64-encoded data, ensuring accurate interpretation and display.
 
-**5. Machine Learning-driven Image Analysis:**
-   - Advanced machine learning algorithms on the server side process the Base64-encoded text data and concurrently analyze the screenshot image for dark patterns.
-
-**6. Dynamic Image Modification:**
-   - If dark patterns are identified, the Python server dynamically modifies the image, emphasizing detected dark patterns while preserving the original context.
-
-**7. Modified Image Transmission:**
-   - The enhanced image, along with any additional data, is transmitted back to the mobile application, completing the feedback loop.
-
-**8. Data Decoding with Base64:**
-   - Upon receiving the server response, the mobile application decodes any Base64-encoded data, ensuring accurate interpretation and display.
-
-**9. User Insight Delivery:**
-   - Users receive the modified image, providing visual insights into the presence of dark patterns within the uploaded screenshot.
+Users ultimately receive the modified image, providing visual insights into the presence of dark patterns within the uploaded screenshot. This comprehensive architecture seamlessly integrates OCR, machine learning, and dynamic image modification to enhance user understanding of potential manipulations within the analyzed content.
 
 <hr>
 
