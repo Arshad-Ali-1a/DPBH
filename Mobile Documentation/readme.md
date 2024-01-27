@@ -1,4 +1,4 @@
-# The Dark Pattern Detection System - NORUS
+# The Dark Pattern Detection System - NOVA
 
 This is the official documentation for the NOVA mobile application, the cross-platform counterpart to our Web Extension, built to extract and highlight dark patterns from mobile screenshots.
 
@@ -76,13 +76,27 @@ Upon navigation install the dependencies onto your development machine using the
 flutter clean # Clean any outstanding files from previous builds 
 flutter pub get # Install all dependencies to the local machine
 ```
+
 ## Connecting to the Backend:
-It is required to set up the backend of the application. The app can communicate with the backend in 3 ways:
+It is required to set up the backend of the application. Configure the URI on line 90 in the `./main/lib/main.dart` file.
 - Using the IP address of a system on a local network:
   - `var url = Uri.parse('http://192.168.*.*:8000/detect_darkness'); ` 
 - Using the local host of the user system
-  - `var url = Uri.parse('http://localhost:8000/detect_darkness');` 
+  - `var url = Uri.parse('http://localhost:8000/detect_darkness');`
+  - For users running on local host, ensure that the host is configured at '0.0.0.0' to ensure global visibility.
+    -Running using Uvicorn ```uvicorn app:app --host 0.0.0.0 --port 8000 --reload  ```
+    -Running using python ``` python .\app.py ```  
 - Using an API connected to a remote / cloud server
   - `var url = Uri.parse('http://CLOUD_API_END_POINT/detect_darkness');`
+
+
+
+## Connecting to an Android Device:
+
+Ensure that `Developer Options` and `USB Debugging` are enabled on your Android device. Please make use of the following resources to set up USB Debugging:
+[Enabling Developer Options and USB Debugging on Android Device](https://developer.android.com/studio/debug/dev-options)
+
+Once enabled, connect your device to the developer machine via USB and follow the on-screen prompts on your phone to set up the system as a trusted device. 
+
 
 
