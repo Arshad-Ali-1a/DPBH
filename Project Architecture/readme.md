@@ -8,7 +8,7 @@ Here's the working of our **Chrome Extension** and **Mobile Application**
 
 The Chrome extension for detecting dark patterns comprises a popup interface that users interact with by clicking on the extension icon. This interface triggers a detection process, communicating with a background script, which, in turn, signals a content script to initiate data extraction from the active webpage.
 
-The content script, injected into the webpage, gathers information about HTML elements such as tags, text, id, class, location, height, and width. This data is structured in JSON format and transmitted to a cloud-hosted server for dark pattern detection, leveraging machine learning models.
+The content script, injected into the webpage, gathers information about HTML elements such as tags, text, id, class, location, height, and width which is deleted after the process is completed. This data is structured in JSON format and transmitted to a cloud-hosted server for dark pattern detection, leveraging machine learning models.
 
 The server processes the received JSON data, utilizing its dark pattern detection model to identify patterns within the webpage. The results, including the type and count of detected dark patterns, along with specific text elements identified, are sent back to the content script.
 
