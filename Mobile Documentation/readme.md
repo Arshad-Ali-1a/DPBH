@@ -1,6 +1,6 @@
-# The Dark Pattern Detection System - Horus
+# The Dark Pattern Detection System - NORUS
 
-This is the official documentation for the Horus mobile application, the cross-platform counterpart to our Web Extension Horus, built to extract and highlight dark patterns from screenshots.
+This is the official documentation for the NOVA mobile application, the cross-platform counterpart to our Web Extension, built to extract and highlight dark patterns from mobile screenshots.
 
 ## Beginner Resources
 
@@ -14,3 +14,5 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+## Setting Up Nova on your local Android System:
+Extract the source code from the `NOVA Dark Pattern Buster Mobile Application Source Code` file and save the extracted directory.
