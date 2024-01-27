@@ -15,4 +15,10 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 ## Setting Up Nova on your local Android System:
-Extract the source code from the `NOVA Dark Pattern Buster Mobile Application Source Code` file and save the extracted directory.
+Extract the source code from the `NOVA Dark Pattern Buster Mobile Application Source Code` file and save the extracted directory. The following video shows how to extract and navigate to the required directory using Windows 11 and VS Code.
+
+https://github.com/PreranaYekkele/DPBH/assets/95875573/52114c2b-720d-42df-80b3-93c96dde8b22
+
+
+
+
