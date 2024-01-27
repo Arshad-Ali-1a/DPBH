@@ -4,54 +4,19 @@ Here's the working of our **Chrome Extension** and **Mobile Application**
 
 ![Architecture](../images/architecture.png)
 
-### Extension Architecture Overview:
+## Extension Architecture Overview:
 
-1. **User Interaction:**
-   - The user interacts with the extension by clicking on the extension icon in the Chrome browser.
+The Chrome extension for detecting dark patterns comprises a popup interface that users interact with by clicking on the extension icon. This interface triggers a detection process, communicating with a background script, which, in turn, signals a content script to initiate data extraction from the active webpage.
 
-2. **Popup (popup.html, popup.js, style.css):**
-   - The popup is responsible for initiating the detection process.
-   - It sends a command to the background script to start the detection.
+The content script, injected into the webpage, gathers information about HTML elements such as tags, text, id, class, location, height, and width. This data is structured in JSON format and transmitted to a cloud-hosted server for dark pattern detection, leveraging machine learning models.
 
-3. **Background Script (background.js):**
-   - Listens for commands from the popup.
-   - Initiates the detection process by sending a message to the content script.
+The server processes the received JSON data, utilizing its dark pattern detection model to identify patterns within the webpage. The results, including the type and count of detected dark patterns, along with specific text elements identified, are sent back to the content script.
 
-4. **Content Script (content.js):**
-   - Injected into the currently active webpage.
-   - Scrapes data from the webpage using Depth First Search Approach to extract information about the HTML elements (tags, text, id, class, location, height, width).
-   - Compiles the extracted data into a JSON format.
-   - Sends the JSON data to the server for dark pattern detection.
+Upon receiving the server's response, the content script highlights the identified dark pattern elements on the webpage. Simultaneously, it communicates with the popup to relay the detected dark pattern details. The popup, in turn, displays these results to the user in an easily comprehensible format, offering insights into the nature and prevalence of dark patterns on the visited website.
 
-5. **Server (Cloud Hosted):**
-   - Hosted in the cloud to handle dark pattern detection using machine learning models.
-   - Receives JSON data from the content script.
-   - Processes the data using the dark pattern detection model.
-   - Sends back a response containing information about detected dark patterns, including their type, count, and specific texts identified as dark patterns.
+This architecture maintains a clear flow of communication between the user interface, background processes, content script, and the cloud-based server. It enables efficient detection of dark patterns, enhancing the user's understanding of potential manipulations within the displayed content.
 
-6. **Content Script (Continued):**
-   - Receives the response from the server.
-   - Parses the response and extracts information about dark patterns.
-   - Highlights the identified dark pattern elements on the webpage.
-   - Sends a message to the popup to display the results.
-
-7. **Popup (Continued):**
-   - Receives the message from the content script with the detected dark pattern details.
-   - Renders the results in a user-friendly format, showing the type and count of dark patterns.
-   - Displays any relevant texts identified as dark patterns.
-
-### Data Flow:
-
-1. User initiates detection in the popup.
-2. Popup sends a command to the background script.
-3. Background script sends a message to the content script.
-4. Content script scrapes and compiles data, then sends it to the server.
-5. Server processes the data, runs dark pattern detection, and sends results back.
-6. Content script receives the results and highlights dark patterns on the webpage.
-7. Content script sends a message to the popup with the detected dark pattern details.
-8. Popup displays the results to the user.
-
-This architecture allows for a clear separation of concerns between different components of your extension, making it modular and easy to maintain. It ensures effective communication between the extension and the server for dark pattern detection.
+<hr>
 
 ## Interacting with Mobile Application:
 
