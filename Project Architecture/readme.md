@@ -1,6 +1,6 @@
 # System Architecture
 
-![Architecture](images/architecture.png)
+![Architecture](../images/architecture.png)
 
 ## Interacting with Chrome Extension:
 
