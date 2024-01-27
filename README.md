@@ -30,8 +30,9 @@ This README provides instructions on how to run and test the Chrome Extension lo
 
 
     - Click on the **Load unpacked** button.
-
     - Select the directory where you extracted the project files and click **Select Folder.**
+  
+    ![Load Extension](images/lead_extension.png)
 
 3. **Verify the Extension:**
 
