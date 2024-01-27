@@ -34,8 +34,8 @@ The file structure of the application follows native Flutter scaffolding, as ins
 ```
 
 The files of interest are as follows:
-- `main.dart` is the main Flutter Application and the entry point of the app. All the required code is found in this file.
-- `pubsec.yaml` is the file that handles dependencies. Any new dependencies required for the application are to be added to the dependencies portion of the file. Upon extraction these dependencies should be visible in the `pubsec.yaml` file:
+- `main.dart` is the main Flutter Application and the entry point of the app.
+- `pubsec.yaml` handles dependencies. Any new dependencies are to be added to the dependencies portion of the file. Upon extraction, the required dependencies will be as follows:
 
 ```
 dependencies:
@@ -53,5 +53,17 @@ dependencies:
   image: ^3.0.1 # To process images
 ```
 
+To start setting up the application, navigate to the main folder of the app using the command line or terminal. You may also choose to directly open the main folder in any IDE (VSCode, Sublime, Android Studio):
 
+```
+PS C:\Users\USER_1\Downloads\NOVA - Dark Patterns Buster Mobile Application (Source Code)> cd '.\Dark Patterns Back End Comms\'
+PS C:\Users\USER_1\Downloads\NOVA - Dark Patterns Buster Mobile Application (Source Code)\Dark Patterns Back End Comms> cd .\main\ 
+```
+
+Upon navigation install the dependencies onto your development machine using the following commands
+
+```
+flutter clean # Clean any outstanding files from previous builds 
+flutter pub get # Install all dependencies to the local machine
+```
 
