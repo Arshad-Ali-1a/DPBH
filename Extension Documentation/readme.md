@@ -18,26 +18,26 @@
     - Enable "Developer mode" using the toggle switch in the top right corner.
 
     ## Edge
-    ![Developer Mode](images/edge_dev.png)
+    ![Developer Mode](../images/edge_dev.png)
 
     ## Brave
-    ![Developer Mode](images/brave_dev.png)
+    ![Developer Mode](../images/brave_dev.png)
     
     ## Chrome
-    ![Developer Mode](images/chrome_dev.png)
+    ![Developer Mode](../images/chrome_dev.png)
 
 
     - Click on the **Load unpacked** button.
     - Select the directory where you extracted the project files and click **Select Folder.**
   
-    ![Load Extension](images/load_extension.png)
+    ![Load Extension](../images/load_extension.png)
 
 3. **Verify the Extension:**
 
     - The extension with name **NOVA** should now appear in the list of installed extensions.
     - Ensure that the extension is enabled.
 
-    ![Extension Enabled](images/extension_enabled.png)
+    ![Extension Enabled](../images/extension_enabled.png)
 
 4. **Test the Extension:**
 
