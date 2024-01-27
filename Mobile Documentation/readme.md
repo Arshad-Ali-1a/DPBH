@@ -22,7 +22,35 @@ https://github.com/PreranaYekkele/DPBH/assets/95875573/04b950f1-39d9-4db7-8a4e-e
 The file structure of the application follows native Flutter scaffolding, as instantiated when creating a new Flutter Application in VS Code using the Flutter SDK. 
 
 ```
+/--NOVA Dark Patterns Buster Mobile Application (Source Code)
+      /--Dark Patterns Back End Comms
+            /------.idea
+            /------main
+                  /-------[Other Files]
+                  /-------lib
+                        /----- main.dart
+                  /-------[Other Files]
+                  /------- pubsec.yaml
+```
 
+The files of interest are as follows:
+-`main.dart` is the main Flutter Application and the entry point of the app. All the required code is found in this file.
+-`pubsec.yaml` is the file that handles dependencies. Any new dependencies required for the application are to be added to the dependencies portion of the file. Upon extraction these dependencies should be visible in the `pubsec.yaml` file:
+
+```
+dependencies:
+  flutter:
+    sdk: flutter # To set up the Flutter Environment
+  dash_bubble: ^2.0.0 # For Widget management
+  screenshot: ^2.1.0  #To handle taking Screenshots in the Flutter App
+  http: ^0.13.3  # To handle network requests
+  flutter_lints: ^2.0.0 
+  cupertino_icons: ^1.0.2 # icon pack 
+  flutter_local_notifications: ^9.1.4 # To generate notifications
+  path_provider: ^2.0.2
+  permission_handler: ^8.1.4+2 # To handle system perms
+  image_picker: ^0.8.4+4 # To allow users to choose images form image tray
+  image: ^3.0.1 # To process images
 ```
 
 
