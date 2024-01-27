@@ -98,10 +98,48 @@ It is required to set up the backend of the application. Configure the URI on li
 
 ## Connecting to an Android Device:
 
-Ensure that `Developer Options` and `USB Debugging` are enabled on your Android device. Please make use of the following resources to set up USB Debugging:
+- Ensure that `Developer Options` and `USB Debugging` are enabled on your Android device. Please make use of the following resources to set up USB Debugging:
 [Enabling Developer Options and USB Debugging on Android Device](https://developer.android.com/studio/debug/dev-options)
 
-Once enabled, connect your device to the developer machine via USB and follow the on-screen prompts on your phone to set up the system as a trusted device. 
+- Once enabled, connect your device to the developer machine via USB and follow the on-screen prompts on your phone to set up the system as a trusted device.
+- To confirm that the device has been connected and visible to the Flutter SDK, run the collowing command in your development environment:
+  ```
+  PS C:\Users\USER_1\Downloads\NOVA - Dark Patterns Buster Mobile Application (Source Code)\Dark Patterns Back End Comms> main> flutter devices
+  ```
+- All available devices will be displayed in the terminal
+  ```
+  Found 4 connected devices:
+  A063 (mobile)     • P22316001846 • android-arm64  • Android 13 (API 33)
+  Windows (desktop) • windows      • windows-x64    • Microsoft Windows [Version 10.0.22621.3007]
+  Chrome (web)      • chrome       • web-javascript • Google Chrome 121.0.6167.86
+  Edge (web)        • edge         • web-javascript • Microsoft Edge 121.0.2277.83
+  ```
+- As shown above the Android Device `A063 (mobile)` has been successfully detected by the Flutter SDK.
+
+## Running the Flutter Application on Android Device
+
+- Run the Flutter app on the Android Device by using the following command
+  ```
+  PS C:\Users\USER_1\Downloads\NOVA - Dark Patterns Buster Mobile Application (Source Code)\Dark Patterns Back End Comms> main> flutter run 
+  ```
+- Upon being prompted choose the device that should run the Flutter Application (Your device will be connected automatically if it is the only environment available)
+  ```
+  Connected devices:
+  A063 (mobile)                • P22316001846  • android-arm64  • Android 13 (API 33)
+  sdk gphone64 x86 64 (mobile) • emulator-5554 • android-x64    • Android 14 (API 34) (emulator)
+  Windows (desktop)            • windows       • windows-x64    • Microsoft Windows [Version 10.0.22621.3007]
+  Chrome (web)                 • chrome        • web-javascript • Google Chrome 121.0.6167.86
+  Edge (web)                   • edge          • web-javascript • Microsoft Edge 121.0.2277.83
+  [1]: A063 (P22316001846)
+  [2]: sdk gphone64 x86 64 (emulator-5554)
+  [3]: Windows (windows)
+  [4]: Chrome (chrome)
+  [5]: Edge (edge)
+  Please choose one (or "q" to quit): 1
+  ```
+- The SDK will begin building the application on your mobile device
+https://github.com/PreranaYekkele/DPBH/assets/95875573/7699b57f-bc17-49d1-a1b9-8548f08b5a54
+
 
 
 
