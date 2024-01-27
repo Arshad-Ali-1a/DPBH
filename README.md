@@ -1,5 +1,5 @@
 # Introduction to N.O.V.A.S
-Ever stumbled upon a website and felt like it was pushing you into decisions you weren't sure about? 
+Ever stumbled upon e-commerce websites and felt like it was pushing you into decisions you weren't sure about? 
 You're not alone. Sometimes, websites use sneaky tactics like flashing timers or hidden fees to steer you in directions you might not want to go.
 
 This is where NOVAS comes in,
