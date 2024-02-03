@@ -1,6 +1,6 @@
 uvicorn
 fastapi
-PIL
+pillow
 pyocr
 numpy
 requests
