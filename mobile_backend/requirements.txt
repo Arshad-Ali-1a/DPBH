@@ -4,4 +4,4 @@ pillow
 pyocr
 numpy
 requests
-cv2
+opencv-python
