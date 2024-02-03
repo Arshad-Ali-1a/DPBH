@@ -1,0 +1,7 @@
+uvicorn
+fastapi
+PIL
+pyocr
+numpy
+requests
+cv2
