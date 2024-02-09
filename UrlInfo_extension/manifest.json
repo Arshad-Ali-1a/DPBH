@@ -1,0 +1,46 @@
+{
+    "manifest_version": 2,
+    "name": "NOVA",
+    "version": "1.0",
+    "description": "Detect dark patterns on the web",
+  
+    "permissions": [
+      "activeTab",
+      "<all_urls>",
+      "webNavigation"
+    ],
+  
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+
+    "commands": {
+      "getDOM": {
+        "suggested_key": {
+          "default": "Alt+Shift+D"
+        },
+        "description": "Get DOM"
+      },
+      "highlightSentences": {
+        "suggested_key": {
+          "default": "Alt+Shift+H"
+        },
+        "description": "Highlight DOM"
+      }
+    },
+  
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+  
+    "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html",
+      "default_title": "N.O.V.A.S"
+    }
+  }
+  
