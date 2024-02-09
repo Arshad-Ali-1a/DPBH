@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/5.1.0/css/tabulator.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- Tabulator JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/5.1.0/js/tabulator.min.js"></script>
+
+</head>
+<body>
+    <div class="App">
+
+        <section class="loader">
+            <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
+                <div class="wheel"></div>
+                <div class="hamster">
+                    <div class="hamster__body">
+                        <div class="hamster__head">
+                            <div class="hamster__ear"></div>
+                            <div class="hamster__eye"></div>
+                            <div class="hamster__nose"></div>
+                        </div>
+                        <div class="hamster__limb hamster__limb--fr"></div>
+                        <div class="hamster__limb hamster__limb--fl"></div>
+                        <div class="hamster__limb hamster__limb--br"></div>
+                        <div class="hamster__limb hamster__limb--bl"></div>
+                        <div class="hamster__tail"></div>
+                    </div>
+                </div>
+                <div class="spoke"></div>
+            </div>
+            <h2 id="loader-text">HI</h2>
+        </section>
+
+        <section class="home" style="display: none;">
+            <div>
+                <h1 class="heading"> NOVAS</h1>
+                <p class="caption">Nurturing Online Vigilance with Advanced Safeguards</p>
+            </div>
+            <img src="../assets/illustration.svg" class="illustration" alt="">
+        </section>
+
+        <section class="stats" 
+               
+                style="display: none;">
+            <div class="stats-heading" >
+                <div class="stat"  data-aos ="fade-right"
+                data-aos-offset="300"
+                data-aos-delay="20"
+                data-aos-duration="700"
+                data-aos-easing="ease-in-out">
+                    <p class = "stat-number" id = "web-number">Number</p>
+                    <p>Websites</p>
+                </div>
+                <div class="stat"  data-aos ="fade-right"
+                data-aos-offset="300"
+                data-aos-delay="20"
+                data-aos-duration="700"
+                data-aos-easing="ease-in-out">
+                    <p class = "stat-number" id = "dark-number">Number</p>
+                    <p>Dark Patterns</p>
+                </div>
+                <div class="stat"  data-aos ="fade-right"
+                data-aos-offset="300"
+                data-aos-delay="20"
+                data-aos-duration="700"
+                data-aos-easing="ease-in-out">
+                    <p class = "stat-number" id = "type-number">Number</p>
+                    <p>Types of Dark Patterns</p>
+                </div>
+            </div>
+            <div class="graphs"
+                data-aos ="fade-left"
+                data-aos-offset="300"
+                data-aos-delay="20"
+                data-aos-duration="700"
+                data-aos-easing="ease-in-out"
+            >
+                <div>
+                    <canvas id="barGraph"></canvas>
+                </div>
+                <div>
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <section class="table-section"  data-aos ="fade-right"
+        data-aos-offset="300"
+        data-aos-delay="20"
+        data-aos-duration="700"
+        data-aos-easing="ease-in-out" style="display: none;">
+                <div class="table-header">
+                    <input type="text" id="searchInput" id="searchInput" placeholder="Search By Domain...">
+                    <div class="pagination">
+                        <button class="nav-button" onclick="changePage(-1)">Previous</button>
+                        <button class="nav-button" onclick="changePage(1)">Next</button>
+                    </div>
+                </div>
+                <table id="darkPatternsTable">
+                    <thead>
+                    <tr>
+                        <th onclick="sortTable(0)">Domain Name</th>
+                        <th onclick="sortTable(1)">Count</th>
+                        <th onclick="sortTable(2)">Patterns</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tableBody">
+
+                    </tbody>
+                </table>
+        </section>
+
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script src="../scripts/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    </div>
+</body>
+</html>
