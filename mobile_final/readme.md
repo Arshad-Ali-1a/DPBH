@@ -14,7 +14,7 @@ ndk.dir = C:/Users/Mohammad Arshad Ali/AppData/Local/Android/Sdk/ndk/25.1.893739
 
 
 ### AndroidManifest.xml
-| open the AndroidManifest.xml file present in the rough folder, if needed
+| open the AndroidManifest.xml file present in the rough folder to see how the file should look like after the below given changes.
 
 
 then go to `android\app\src\main` and open `AndroidManifest.xml` :
