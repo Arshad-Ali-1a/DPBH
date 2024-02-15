@@ -4,3 +4,5 @@ before running the backend, ensure that the ML-srujan api is up(as it sleeps due
 make a request to: [https://api-dark-pattern.onrender.com](https://api-dark-pattern.onrender.com)
 
 also, ensure that you have [tesseract-ocr](https://tesseract-ocr.github.io/tessdoc/Downloads.html)
+
+install the dependencies: `pip install -r requirements.txt`
