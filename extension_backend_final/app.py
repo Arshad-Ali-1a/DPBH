@@ -92,9 +92,6 @@ app              = FastAPI()
 model            = pk.load(open(os.path.join(dir_path, './models/xgboost-94.pkl'), 'rb'))
 tfidf_vectorizer = pk.load(open(os.path.join(dir_path, './models/tfidf-vectorizer.pkl'), 'rb'))
 
-# model            = pk.load(open(os.path.join(dir_path, './models/SGD_Count0.95.pkl'), 'rb'))
-# tfidf_vectorizer = pk.load(open(os.path.join(dir_path, './models/CountVectorizer.pkl'), 'rb'))
-
 # Category Map is based on LabelEncoder of XGboost model
 category_map = {
     0: 'Forced Action',
@@ -106,19 +103,6 @@ category_map = {
     6: 'Social Proof',
     7: 'Urgency'
 }
-
-# Category Map is based on LabelEncode For SGD Model
-# category_map = {
-#     0: 'Forced Action',
-#     1: 'Misdirection',
-#     2: 'Not Dark Pattern',
-#     3: 'Obstruction',
-#     4: 'Scarcity',
-#     5: 'Sneaking',
-#     6: 'Social Proof',
-#     7: 'Urgency',
-#     8: 'privacy zuckering'
-# }
 
 @app.get("/")
 async def home():
@@ -146,12 +130,6 @@ async def classify_texts(data: dict):
             sentences.append(sen)
 
     sentences = list(set(sentences))
-
-    # save sentences in file
-
-    # with open('sentences.txt', 'w', encoding='utf-8') as f:
-    #     for sentence in sentences:
-    #         f.write(sentence + '\n')
         
     outputs = pd.DataFrame(columns = ['sentence', 'category'])
 
@@ -183,7 +161,6 @@ async def classify_sentence(data: dict):
     confidence_score = round(np.max(model.predict_proba(sentence_tfidf)), 2) * 100
     return {"sentence": data['sentence'], "prediction": prediction, "confidence_score":  confidence_score}
 
-
 @app.post("/searchResults")
 async def json_input(data:dict):
     print(data)
@@ -193,7 +170,6 @@ async def json_input(data:dict):
         return {"message": "No results found"}
     return {"pattern": info["pattern"], "count": info["count"]}
 
-
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
@@ -202,7 +178,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=10000)
