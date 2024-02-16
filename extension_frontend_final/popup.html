@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Access Extension</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class = "app" id = "app">
+    <div class = "app-heading">
+  
+      <img src="./assets/logo.svg" alt="">
+      <div class = "text">
+        <h1>N.O.V.A.S</h1>
+        <p>No Tricks, Just Transparency.</p>
+      </div>
+      
+    </div>
+
+    <div id = "app-tab" class = "app-main-content">
+      <img src="./assets/illustration.svg" alt="">
+      <p>
+        Empower transparency in e-commerce today by identifying and spotlighting dark patterns within website designs. Safeguard your online shopping experience, ensuring a trustworthy and user-friendly interaction.
+      </p>
+
+      <button id = "scrapeBtn">Detect Patterns</button>
+    </div>
+
+    <div id = "loaders-tab" class = "loaders" style="display: none;">
+      <svg class="pl" width="240" height="240" viewBox="0 0 240 240">
+        <circle class="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
+        <circle class="pl__ring pl__ring--b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
+        <circle class="pl__ring pl__ring--c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+        <circle class="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+      </svg>
+      <p class = "loading-text" id = "load-text">Retrieving Information</p>
+    </div>
+
+    <div id = "results-tab" class = "results" style="display: none;">
+      <div class="result-content">
+        <p style="text-transform: uppercase;">Detected <span id = "total-patterns" class = "result-count">0</span> dark patterns </p>
+
+        <div class="patterns" id = "patterns-container">
+          
+          <button>Highlight Patterns</button>
+        </div>
+      </div>
+    </div>
+
+    <div id = "bots-tab" class = "bots" style="display: none;">
+      <div class="chats" id = "chats">
+        
+      </div>
+      <div class="input-section">
+        <input type="text" id = "chat-input" placeholder="Type a message...">
+        <button id = "sendBtn">Send</button>
+      </div>
+    </div>
+
+    <img src="./assets/chatbot.png" id="botBtn" title="Hi, How may I help you?" class="chatbot-icon" alt="">
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
