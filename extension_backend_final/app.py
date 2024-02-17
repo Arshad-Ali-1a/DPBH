@@ -108,12 +108,16 @@ category_map = {
 async def home():
     return {"message": "UI DarkPattern Detector"}
 
+
 @app.post("/classify_texts")
-async def classify_texts(data: dict):
+async def classify_texts(data: dict, isMobile: bool = False):
 
     sentences = []
+    url = ""
 
-    url = data["my_url"]
+    if not isMobile:
+        url = data["my_url"]
+
     data=data['data']
 
     for tag in data.keys():
@@ -148,9 +152,11 @@ async def classify_texts(data: dict):
     for output in outputs.keys():
         counts[output] = len(outputs[output])
 
-    insert(url, counts)
+    if not isMobile:
+        insert(url, counts)
 
     return {"result": outputs, "count": counts}
+
 
 @app.post("/classify_sentence")
 async def classify_sentence(data: dict):
