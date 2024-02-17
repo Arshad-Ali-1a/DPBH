@@ -114,11 +114,13 @@ async def classify_texts(data: dict):
 
     sentences = []
     url = ""
-    isMobile = data['platform'] == "mobile"
 
-    if not isMobile:
+    try:
         url = data["my_url"]
-
+        
+    except KeyError as e:
+        pass
+        
     data=data['data']
 
     for tag in data.keys():
@@ -153,7 +155,7 @@ async def classify_texts(data: dict):
     for output in outputs.keys():
         counts[output] = len(outputs[output])
 
-    if not isMobile:
+    if(url != ""):
         insert(url, counts)
 
     return {"result": outputs, "count": counts}
