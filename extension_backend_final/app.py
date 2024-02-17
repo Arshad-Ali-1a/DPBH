@@ -110,12 +110,12 @@ async def home():
 
 
 @app.post("/classify_texts")
-async def classify_texts(data: dict, isMobile: bool = False):
+async def classify_texts(data: dict):
 
     sentences = []
     url = ""
+    isMobile = data['platform'] == "mobile"
 
-    print(isMobile)
     if not isMobile:
         url = data["my_url"]
 
