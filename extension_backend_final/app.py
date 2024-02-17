@@ -115,6 +115,7 @@ async def classify_texts(data: dict, isMobile: bool = False):
     sentences = []
     url = ""
 
+    print(isMobile)
     if not isMobile:
         url = data["my_url"]
 
